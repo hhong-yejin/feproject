@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/joberProject2/static/css/main.941fede7.css",
+    "main.js": "/joberProject2/static/js/main.e8a83870.js",
+    "static/js/787.cff2dd6a.chunk.js": "/joberProject2/static/js/787.cff2dd6a.chunk.js",
+    "index.html": "/joberProject2/index.html",
+    "main.941fede7.css.map": "/joberProject2/static/css/main.941fede7.css.map",
+    "main.e8a83870.js.map": "/joberProject2/static/js/main.e8a83870.js.map",
+    "787.cff2dd6a.chunk.js.map": "/joberProject2/static/js/787.cff2dd6a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.941fede7.css",
+    "static/js/main.e8a83870.js"
+  ]
+}
