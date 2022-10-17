@@ -24,7 +24,7 @@ const QuestionAttend = () => {
   const [current, setCurrent] = useState(formDataIdx);
   const submit = (e) => {
     if (window.confirm(getSurvey.completionNotice)) {
-      window.location.replace("/attend");
+      navigate("/attend");
     }
   };
 
