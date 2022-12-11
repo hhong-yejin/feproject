@@ -2,14 +2,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Form, Select, Button } from "antd";
 import "antd/dist/antd.css";
-import OptionType from "./OptionType";
-import Input from "./Input";
-
+import OptionType from "./option/OptionType";
 const { Option } = Select;
+
 const Type = (props) => {
   const [change, setChange] = useState(false);
   const [answer, setAnswer] = useState({});
-
   const [inputOptions, setInputOptions] = useState([]);
   const [listNum, setListNum] = useState(0);
 
@@ -39,13 +37,21 @@ const Type = (props) => {
     setOption([...option, listNum + 1]);
   };
 
-  console.log(inputOptions);
   return (
     <div>
-      <Form.Item label="답변 타입">
+      <Form.Item
+        rules={[
+          {
+            required: true,
+            message: "답변 타입을 선택해주세요.",
+          },
+        ]}
+        name={`inputType${props.listNum}`}
+        label="답변 타입"
+      >
         <Select
-          placeholder="답변 타입을 설정해주세요."
           name={"inputType"}
+          placeholder="답변 타입을 설정해주세요!"
           onChange={handleSetinputType}
         >
           <Option value="text">text</Option>
@@ -55,7 +61,7 @@ const Type = (props) => {
         </Select>
       </Form.Item>
       {change ? (
-        <div>
+        <div className="question-option-list">
           {option.map((data) => {
             return (
               <OptionType
@@ -67,18 +73,17 @@ const Type = (props) => {
               />
             );
           })}
-          <Form.Item>
-            <Button
-              htmlType="button"
-              onClick={() => {
-                if (option.length < 5) {
-                  optionTypeCreate();
-                }
-              }}
-            >
-              추가
-            </Button>
-          </Form.Item>
+          {option.length < 5 ? (
+            <Form.Item className="question-box-plusbtn">
+              <Button
+                type="text"
+                htmlType="button"
+                onClick={() => optionTypeCreate()}
+              >
+                +
+              </Button>
+            </Form.Item>
+          ) : null}
         </div>
       ) : null}
     </div>

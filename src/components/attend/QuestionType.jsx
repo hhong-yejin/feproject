@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import { SurveyContext } from "../context/Survey";
+import React from "react";
+import "./styles.scss";
 import { Form, Input, Select, Checkbox, DatePicker } from "antd";
+const { TextArea } = Input;
 const { Option } = Select;
 
 const QuestionType = ({ data, idx, arry }) => {
-  const { inputRef } = useContext(SurveyContext);
   switch (data.answer.inputType) {
     case "text":
       return (
@@ -13,7 +13,7 @@ const QuestionType = ({ data, idx, arry }) => {
             hidden={arry}
             name={idx}
             key={idx}
-            label={idx + 1 + "." + data.question}
+            label={idx + 1 + ". " + data.question}
             rules={[
               {
                 required: data.isRequired,
@@ -21,9 +21,9 @@ const QuestionType = ({ data, idx, arry }) => {
               },
             ]}
           >
-            <Input
-              ref={(f) => (inputRef.current[idx] = f)}
-              type="text"
+            <TextArea
+              allowClear
+              autoSize={{ minRows: 1, maxRows: 6 }}
               placeholder="질문에 답변해주세요."
             />
           </Form.Item>
@@ -35,7 +35,7 @@ const QuestionType = ({ data, idx, arry }) => {
           hidden={arry}
           name={idx}
           key={idx}
-          label={idx + 1 + "." + data.question}
+          label={idx + 1 + ". " + data.question}
           rules={[
             {
               required: data.isRequired,
@@ -43,7 +43,7 @@ const QuestionType = ({ data, idx, arry }) => {
             },
           ]}
         >
-          <DatePicker ref={(f) => (inputRef.current[idx] = f)} />
+          <DatePicker style={{ width: "100%" }} />
         </Form.Item>
       );
     case "select":
@@ -52,7 +52,7 @@ const QuestionType = ({ data, idx, arry }) => {
           hidden={arry}
           name={idx}
           key={idx}
-          label={idx + 1 + "." + data.question}
+          label={idx + 1 + ". " + data.question}
           rules={[
             {
               required: data.isRequired,
@@ -60,10 +60,7 @@ const QuestionType = ({ data, idx, arry }) => {
             },
           ]}
         >
-          <Select
-            ref={(f) => (inputRef.current[idx] = f)}
-            placeholder="답변을 선택해주세요."
-          >
+          <Select placeholder="답변을 선택해주세요.">
             {data.answer.inputOptions.map((data, idx) => {
               return (
                 <Option key={idx} value={data.value}>
@@ -80,7 +77,7 @@ const QuestionType = ({ data, idx, arry }) => {
           hidden={arry}
           name={idx}
           key={idx}
-          label={idx + 1 + "." + data.question}
+          label={idx + 1 + ". " + data.question}
           rules={[
             {
               required: data.isRequired,
@@ -88,15 +85,14 @@ const QuestionType = ({ data, idx, arry }) => {
             },
           ]}
         >
-          <Checkbox.Group
-            ref={(f) => (inputRef.current[idx] = f)}
-            placeholder="답변을 선택해주세요.(여러개 가능)"
-          >
+          <Checkbox.Group placeholder="답변을 선택해주세요.(여러개 가능)">
             {data.answer.inputOptions.map((data, idx) => {
               return (
-                <Checkbox key={idx} value={data.value}>
-                  {data.label}
-                </Checkbox>
+                <div>
+                  <Checkbox key={idx} value={data.value}>
+                    {data.label}
+                  </Checkbox>
+                </div>
               );
             })}
           </Checkbox.Group>

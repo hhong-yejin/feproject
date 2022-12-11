@@ -1,0 +1,108 @@
+@mixin flex(
+  $direction: default,
+  $align-items: center,
+  $justify-content: center
+) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  flex-wrap: wrap;
+}
+$light-mode-color: rgb(252, 253, 255);
+$light-mode-color2: rgb(246, 249, 253);
+$dark-mode-text: white;
+$dark-mode-color: rgb(23, 23, 31);
+$dark-mode-color2: black;
+
+.ant-layout {
+  .ant-layout-header {
+    @include flex($justify-content: space-between);
+    background-color: $light-mode-color2;
+    padding: 0px 16px;
+  }
+  .ant-layout-content {
+    @include flex($direction: column);
+    background-color: $light-mode-color;
+    min-height: calc(100vh - 64px - 52px);
+    .survey-layout {
+      width: 800px;
+      margin: 30px;
+      .question-box {
+        padding: 30px;
+        position: relative;
+        .question-option-list {
+          @include flex;
+          .question-option-box {
+            width: 50%;
+          }
+          .question-box-plusbtn {
+            position: absolute;
+            bottom: 0;
+          }
+        }
+      }
+      .survey-btns {
+        @include flex;
+        .survey-btn {
+          width: 100px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  .ant-layout-footer {
+    @include flex($justify-content: right);
+    background-color: $light-mode-color2;
+    padding: 10px 30px;
+  }
+}
+
+.dark-mode {
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  label,
+  input,
+  textarea,
+  .ant-form-item {
+    color: $dark-mode-text;
+  }
+  .ant-layout-header {
+    background-color: $dark-mode-color;
+    span {
+      color: white;
+    }
+  }
+  .ant-layout-content {
+    background-color: $dark-mode-color2;
+    .ant-form-item-control {
+      span {
+        color: white;
+      }
+      .ant-input,
+      .ant-picker {
+        background-color: $dark-mode-color;
+      }
+    }
+
+    .ant-select .ant-select-selector {
+      background-color: $dark-mode-color;
+    }
+    label {
+      color: $dark-mode-text;
+    }
+  }
+  .ant-layout-footer {
+    background-color: $dark-mode-color;
+
+    span {
+      color: white;
+    }
+  }
+  .border {
+    border: 1px solid white;
+  }
+}

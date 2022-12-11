@@ -1,0 +1,22 @@
+@import "../../components/layout/layout.scss";
+
+.ant-list-item-meta {
+  cursor: pointer;
+  margin: 50px;
+  .ant-list-item-meta-title {
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+
+.dark-mode {
+  .ant-list-item {
+    border-bottom: 1px solid rgb(57, 57, 57);
+    .ant-list-item-meta-description {
+      color: rgb(159, 159, 159);
+    }
+  }
+  .ant-empty-description {
+    color: white;
+  }
+}

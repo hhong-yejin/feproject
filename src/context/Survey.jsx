@@ -1,11 +1,10 @@
-import React, { createContext, useRef, useState } from "react";
+import React, { createContext, useState } from "react";
 
 const SurveyContext = createContext();
 
 const Survey = (props) => {
   const [surveyName, setSurveyName] = useState("");
   const [surveyList, setSurveyList] = useState();
-  const inputRef = useRef([]);
 
   return (
     <SurveyContext.Provider
@@ -14,7 +13,6 @@ const Survey = (props) => {
         setSurveyName,
         surveyList,
         setSurveyList,
-        inputRef,
       }}
     >
       {props.children}

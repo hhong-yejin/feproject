@@ -1,0 +1,25 @@
+@import "../../layout/layout.scss";
+
+.question-box {
+  position: relative;
+  &:hover {
+    background-color: $light-mode-color2;
+    .question-box-delbtn {
+      display: block;
+    }
+  }
+  .question-box-delbtn {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.dark-mode {
+  .question-box {
+    &:hover {
+      background-color: $dark-mode-color;
+    }
+  }
+}
