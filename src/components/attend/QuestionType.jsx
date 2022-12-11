@@ -99,7 +99,7 @@ const QuestionType = ({ data, idx, arry }) => {
         </Form.Item>
       );
     default:
-      return <h1>dd</h1>;
+      return null;
   }
 };
 

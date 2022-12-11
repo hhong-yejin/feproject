@@ -75,12 +75,8 @@ const Type = (props) => {
           })}
           {option.length < 5 ? (
             <Form.Item className="question-box-plusbtn">
-              <Button
-                type="text"
-                htmlType="button"
-                onClick={() => optionTypeCreate()}
-              >
-                +
+              <Button type="primary" onClick={() => optionTypeCreate()}>
+                옵션 추가
               </Button>
             </Form.Item>
           ) : null}

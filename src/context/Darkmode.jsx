@@ -6,7 +6,6 @@ const DarkMode = (props) => {
   const [darkMode, setDarkMode] = useState(localStorage.getItem("darkmode"));
   let darkModeClass =
     darkMode === true || darkMode === "true" ? "dark-mode" : null;
-  console.log(darkMode);
   const darkModeBtn = (e) => {
     localStorage.setItem("darkmode", e);
     setDarkMode(e);

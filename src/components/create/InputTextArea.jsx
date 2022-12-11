@@ -24,7 +24,7 @@ const InputTextArea = (props) => {
       >
         <TextArea
           name={props.name}
-          placeholder={"설문의" + props.label + "을(를) 입력하세요!"}
+          placeholder={"설문의 " + props.label + "을(를) 입력하세요!"}
           onChange={(e) => handleSetTextArea(e)}
           autoSize={{ minRows: 1, maxRows: 10 }}
         ></TextArea>

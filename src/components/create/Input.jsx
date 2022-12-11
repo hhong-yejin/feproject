@@ -26,7 +26,7 @@ const InputBox = (props) => {
       >
         <Input
           name={props.name}
-          placeholder={"설문의" + props.label + "을(를) 입력하세요!"}
+          placeholder={"설문의 " + props.label + "을(를) 입력하세요!"}
           onChange={(e) => handleSetTitle(e)}
         ></Input>
       </Form.Item>
