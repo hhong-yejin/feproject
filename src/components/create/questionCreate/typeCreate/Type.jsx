@@ -65,7 +65,8 @@ const Type = (props) => {
           {option.map((data) => {
             return (
               <OptionType
-                listNum={data}
+                listNum1={props.listNum}
+                listNum2={data}
                 key={data}
                 inputOptions={inputOptions}
                 setInputOptions={setInputOptions}

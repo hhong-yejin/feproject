@@ -21,7 +21,7 @@ const QuestionAttend = () => {
   const [current, setCurrent] = useState(formDataIdx);
   const submit = (e) => {
     if (window.confirm(getSurvey.completionNotice)) {
-      navigate("/attend");
+      navigate("/");
     }
   };
 
@@ -169,91 +169,6 @@ const QuestionAttend = () => {
             })}
           </div>
         )}
-        {/* {next ? (
-          <div>
-            <Form.Item className="attend-btn" key={key + "_next"}>
-              <Button
-                type="primary"
-                onClick={() => {
-                  setNext(!next);
-                }}
-              >
-                다음
-              </Button>
-            </Form.Item>
-            <Form.Item label="설문 제목" key={getSurvey.title}>
-              <Input value={getSurvey.title} readOnly />
-            </Form.Item>
-            <Form.Item label="설문 설명" key={getSurvey.description}>
-              <TextArea
-                autoSize={{ minRows: 1, maxRows: 10 }}
-                value={getSurvey.description}
-                readOnly
-              />
-            </Form.Item>
-          </div>
-        ) : (
-          <div>
-            <Steps
-              current={current}
-              key={"step"}
-              onChange={(formDataIdx) => {
-                setFormDataIdx(formDataIdx);
-                setCurrent(formDataIdx);
-                const newArry = Array(getSurvey.formData.length).fill(true);
-                newArry[formDataIdx] = false;
-                setArry(newArry);
-              }}
-            >
-              {getSurvey.formData.map((data, idx) => {
-                return <Step status={stepStatus[idx]} key={idx} />;
-              })}
-            </Steps>
-            {getSurvey.formData.map((data, idx) => {
-              return (
-                <div key={idx}>
-                  <QuestionType
-                    formName="questionForm"
-                    arry={arry[idx]}
-                    data={data}
-                    idx={idx}
-                    key={idx}
-                  />
-                  {idx !== getSurvey.formData.length - 1 ? (
-                    <Form.Item className="attend-btn" key={idx + "_nextBtn"}>
-                      <Button
-                        hidden={arry[idx]}
-                        type="primary"
-                        htmlType="button"
-                        onClick={() => {
-                          const newArry = Array(getSurvey.formData.length).fill(
-                            true
-                          );
-                          newArry[idx + 1] = false;
-                          setArry(newArry);
-                          setFormDataIdx(idx + 1);
-                          setCurrent(idx + 1);
-                        }}
-                      >
-                        다음
-                      </Button>
-                    </Form.Item>
-                  ) : (
-                    <Form.Item className="attend-btn" key={idx + "_submit"}>
-                      <Button
-                        hidden={arry[idx]}
-                        type="primary"
-                        htmlType="submit"
-                      >
-                        제출
-                      </Button>
-                    </Form.Item>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        )} */}
       </Form>
     </div>
   );

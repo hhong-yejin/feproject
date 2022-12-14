@@ -81,12 +81,7 @@ const SurveyCreate = () => {
           <Button className="survey-btn" type="primary" htmlType="submit">
             등록
           </Button>
-          <Button
-            type="primary"
-            onClick={() => {
-              questionCreate();
-            }}
-          >
+          <Button type="primary" onClick={questionCreate}>
             항목 추가
           </Button>
         </Form.Item>

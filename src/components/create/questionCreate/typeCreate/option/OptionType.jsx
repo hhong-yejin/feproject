@@ -5,13 +5,13 @@ import { useEffect } from "react";
 
 const OptionType = (props) => {
   const [inputOption, setInputOption] = useState({
-    key: props.listNum,
+    key: props.listNum2,
     label: "",
     value: "",
   });
 
   useEffect(() => {
-    props.inputOptions[props.listNum] = inputOption;
+    props.inputOptions[props.listNum2] = inputOption;
   }, [inputOption]);
 
   const handleSetValue = (e) => {
@@ -26,7 +26,7 @@ const OptionType = (props) => {
           type="text"
           htmlType="button"
           onClick={() => {
-            props.optionTypeDelete(props.listNum);
+            props.optionTypeDelete(props.listNum2);
           }}
         >
           X
@@ -36,10 +36,10 @@ const OptionType = (props) => {
         rules={[
           {
             required: true,
-            message: "옵션의 label를 입력하세요.",
+            message: "옵션의 label를 입력해주세요.",
           },
         ]}
-        name={`label${props.listNum}`}
+        name={`label${props.listNum1}${props.listNum2}`}
         label="label"
       >
         <Input
@@ -52,10 +52,10 @@ const OptionType = (props) => {
         rules={[
           {
             required: true,
-            message: "옵션의 label를 입력하세요.",
+            message: "옵션의 값을 입력해주세요.",
           },
         ]}
-        name={`value${props.listNum}`}
+        name={`value${props.listNum1}${props.listNum2}`}
         label="value"
       >
         <Input

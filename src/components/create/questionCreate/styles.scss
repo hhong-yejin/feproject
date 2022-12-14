@@ -8,11 +8,18 @@
       display: block;
     }
   }
+  .ant-form-item-label
+    > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+    display: none;
+  }
   .question-box-delbtn {
     display: none;
     position: absolute;
     right: 0;
     top: 0;
+  }
+  .question-box-plusbtn {
+    margin: 10px;
   }
 }
 

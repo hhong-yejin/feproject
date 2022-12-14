@@ -41,7 +41,7 @@ const HeaderSection = ({ children }) => {
             onClick={() => navigate("/")}
             style={{ fontWeight: "600", fontSize: "20px" }}
           >
-            YEJIN
+            Survey
           </Button>
         </div>
 
