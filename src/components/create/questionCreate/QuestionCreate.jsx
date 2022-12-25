@@ -11,7 +11,7 @@ const QuestionCreate = (props) => {
     isRequired: "",
   });
   useEffect(() => {
-    props.formData[props.listNum] = formData;
+    props.formData[props.idx] = formData;
   }, [formData]);
 
   const handleSetQuestion = (e) => {

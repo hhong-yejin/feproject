@@ -19,7 +19,7 @@ const SurveyAttend = () => {
 
   const getSurveyList = surveyList.map((survey, idx) => {
     return (
-      <List.Item>
+      <List.Item key={idx}>
         <List.Item.Meta
           title={survey.title}
           onClick={() => navigate(`/attend/${idx}`, { state: { key: idx } })}

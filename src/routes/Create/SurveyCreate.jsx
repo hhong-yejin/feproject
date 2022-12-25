@@ -60,13 +60,14 @@ const SurveyCreate = () => {
           survey={survey}
           setSurvey={setSurvey}
         />
-        {questionList.map((data) => {
+        {questionList.map((data, idx) => {
           return (
             <QuestionCreate
               formData={formData}
               setFormData={setFormData}
               questionDelete={questionDelete}
               listNum={data}
+              idx={idx}
               key={data}
             />
           );

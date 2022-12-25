@@ -62,11 +62,12 @@ const Type = (props) => {
       </Form.Item>
       {change ? (
         <div className="question-option-list">
-          {option.map((data) => {
+          {option.map((data, idx) => {
             return (
               <OptionType
                 listNum1={props.listNum}
                 listNum2={data}
+                idx={idx}
                 key={data}
                 inputOptions={inputOptions}
                 setInputOptions={setInputOptions}

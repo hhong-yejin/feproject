@@ -11,7 +11,7 @@ const OptionType = (props) => {
   });
 
   useEffect(() => {
-    props.inputOptions[props.listNum2] = inputOption;
+    props.inputOptions[props.idx] = inputOption;
   }, [inputOption]);
 
   const handleSetValue = (e) => {
